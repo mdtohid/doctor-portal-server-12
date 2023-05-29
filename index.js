@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const verifyJwt = (req, res, next) => {
+const  verifyJwt = (req, res, next) => {
   const authorization = req.headers.authorization;
   if (!authorization) {
     res.status(401).send({ message: 'User not found' });
@@ -274,7 +274,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello world!');
 })
 
 app.listen(port, () => {
